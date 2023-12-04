@@ -1,0 +1,580 @@
+
+*** Running vivado
+    with args -log pong_top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source pong_top.tcl
+
+
+****** Vivado v2018.3 (64-bit)
+  **** SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+  **** IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source pong_top.tcl -notrace
+Command: synth_design -top pong_top -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 33108 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 380.195 ; gain = 101.141
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'pong_top' [C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/sources_1/new/pong_top.v:12]
+	Parameter newgame bound to: 2'b00 
+	Parameter play bound to: 2'b01 
+	Parameter newball bound to: 2'b10 
+	Parameter over bound to: 2'b11 
+INFO: [Synth 8-6157] synthesizing module 'vga_controller' [C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/sources_1/new/vga_controller.v:21]
+	Parameter HD bound to: 640 - type: integer 
+	Parameter HF bound to: 48 - type: integer 
+	Parameter HB bound to: 16 - type: integer 
+	Parameter HR bound to: 96 - type: integer 
+	Parameter HMAX bound to: 799 - type: integer 
+	Parameter VD bound to: 480 - type: integer 
+	Parameter VF bound to: 10 - type: integer 
+	Parameter VB bound to: 33 - type: integer 
+	Parameter VR bound to: 2 - type: integer 
+	Parameter VMAX bound to: 524 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'vga_controller' (1#1) [C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/sources_1/new/vga_controller.v:21]
+INFO: [Synth 8-6157] synthesizing module 'pong_text' [C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/sources_1/new/pong_text.v:13]
+INFO: [Synth 8-6157] synthesizing module 'ascii_rom' [C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/sources_1/new/ascii_rom.v:21]
+INFO: [Synth 8-5534] Detected attribute (* rom_style = "block" *) [C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/sources_1/new/ascii_rom.v:29]
+INFO: [Synth 8-6155] done synthesizing module 'ascii_rom' (2#1) [C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/sources_1/new/ascii_rom.v:21]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/sources_1/new/pong_text.v:97]
+INFO: [Synth 8-6155] done synthesizing module 'pong_text' (3#1) [C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/sources_1/new/pong_text.v:13]
+INFO: [Synth 8-6157] synthesizing module 'pong_graph' [C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/sources_1/new/pong_graph.v:12]
+	Parameter X_MAX bound to: 639 - type: integer 
+	Parameter Y_MAX bound to: 479 - type: integer 
+	Parameter L_WALL_L bound to: 32 - type: integer 
+	Parameter L_WALL_R bound to: 39 - type: integer 
+	Parameter T_WALL_T bound to: 64 - type: integer 
+	Parameter T_WALL_B bound to: 71 - type: integer 
+	Parameter B_WALL_T bound to: 472 - type: integer 
+	Parameter B_WALL_B bound to: 479 - type: integer 
+	Parameter X_PAD_L bound to: 600 - type: integer 
+	Parameter X_PAD_R bound to: 603 - type: integer 
+	Parameter PAD_HEIGHT bound to: 72 - type: integer 
+	Parameter PAD_VELOCITY bound to: 3 - type: integer 
+	Parameter BALL_SIZE bound to: 8 - type: integer 
+	Parameter BALL_VELOCITY_POS bound to: 2 - type: integer 
+	Parameter BALL_VELOCITY_NEG bound to: -2 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'pong_graph' (4#1) [C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/sources_1/new/pong_graph.v:12]
+INFO: [Synth 8-6157] synthesizing module 'timer' [C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/sources_1/new/timer.v:12]
+INFO: [Synth 8-6155] done synthesizing module 'timer' (5#1) [C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/sources_1/new/timer.v:12]
+INFO: [Synth 8-6157] synthesizing module 'm100_counter' [C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/sources_1/new/m100_counter.v:12]
+WARNING: [Synth 8-6090] variable 'dig0_next' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/sources_1/new/m100_counter.v:40]
+WARNING: [Synth 8-6090] variable 'dig1_next' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/sources_1/new/m100_counter.v:41]
+INFO: [Synth 8-6155] done synthesizing module 'm100_counter' (6#1) [C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/sources_1/new/m100_counter.v:12]
+INFO: [Synth 8-6155] done synthesizing module 'pong_top' (7#1) [C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/sources_1/new/pong_top.v:12]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 436.629 ; gain = 157.574
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 436.629 ; gain = 157.574
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 436.629 ; gain = 157.574
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/constrs_1/new/Basys3_Master.xdc]
+WARNING: [Vivado 12-584] No ports matched 'seg[0]'. [C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/constrs_1/new/Basys3_Master.xdc:82]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/constrs_1/new/Basys3_Master.xdc:82]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[0]'. [C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/constrs_1/new/Basys3_Master.xdc:83]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/constrs_1/new/Basys3_Master.xdc:83]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[1]'. [C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/constrs_1/new/Basys3_Master.xdc:84]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/constrs_1/new/Basys3_Master.xdc:84]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[1]'. [C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/constrs_1/new/Basys3_Master.xdc:85]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/constrs_1/new/Basys3_Master.xdc:85]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[2]'. [C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/constrs_1/new/Basys3_Master.xdc:86]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/constrs_1/new/Basys3_Master.xdc:86]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[2]'. [C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/constrs_1/new/Basys3_Master.xdc:87]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/constrs_1/new/Basys3_Master.xdc:87]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[3]'. [C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/constrs_1/new/Basys3_Master.xdc:88]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/constrs_1/new/Basys3_Master.xdc:88]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[3]'. [C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/constrs_1/new/Basys3_Master.xdc:89]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/constrs_1/new/Basys3_Master.xdc:89]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[4]'. [C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/constrs_1/new/Basys3_Master.xdc:90]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/constrs_1/new/Basys3_Master.xdc:90]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[4]'. [C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/constrs_1/new/Basys3_Master.xdc:91]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/constrs_1/new/Basys3_Master.xdc:91]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[5]'. [C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/constrs_1/new/Basys3_Master.xdc:92]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/constrs_1/new/Basys3_Master.xdc:92]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[5]'. [C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/constrs_1/new/Basys3_Master.xdc:93]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/constrs_1/new/Basys3_Master.xdc:93]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[6]'. [C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/constrs_1/new/Basys3_Master.xdc:94]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/constrs_1/new/Basys3_Master.xdc:94]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[6]'. [C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/constrs_1/new/Basys3_Master.xdc:95]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/constrs_1/new/Basys3_Master.xdc:95]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'dp'. [C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/constrs_1/new/Basys3_Master.xdc:97]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/constrs_1/new/Basys3_Master.xdc:97]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'dp'. [C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/constrs_1/new/Basys3_Master.xdc:98]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/constrs_1/new/Basys3_Master.xdc:98]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[0]'. [C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/constrs_1/new/Basys3_Master.xdc:100]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/constrs_1/new/Basys3_Master.xdc:100]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[0]'. [C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/constrs_1/new/Basys3_Master.xdc:101]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/constrs_1/new/Basys3_Master.xdc:101]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[1]'. [C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/constrs_1/new/Basys3_Master.xdc:102]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/constrs_1/new/Basys3_Master.xdc:102]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[1]'. [C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/constrs_1/new/Basys3_Master.xdc:103]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/constrs_1/new/Basys3_Master.xdc:103]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[2]'. [C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/constrs_1/new/Basys3_Master.xdc:104]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/constrs_1/new/Basys3_Master.xdc:104]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[2]'. [C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/constrs_1/new/Basys3_Master.xdc:105]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/constrs_1/new/Basys3_Master.xdc:105]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[3]'. [C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/constrs_1/new/Basys3_Master.xdc:106]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/constrs_1/new/Basys3_Master.xdc:106]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[3]'. [C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/constrs_1/new/Basys3_Master.xdc:107]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/constrs_1/new/Basys3_Master.xdc:107]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/constrs_1/new/Basys3_Master.xdc]
+Parsing XDC File [C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/constrs_1/new/const_pong2.xdc]
+Finished Parsing XDC File [C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/constrs_1/new/const_pong2.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/constrs_1/new/const_pong2.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/pong_top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/pong_top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 774.207 ; gain = 0.000
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 774.211 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 774.211 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 774.211 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 774.211 ; gain = 495.156
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 774.211 ; gain = 495.156
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 774.211 ; gain = 495.156
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5544] ROM "w_25MHz" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "v_count_next" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "char_addr_l" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "char_addr_r" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "x_delta_next" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "y_delta_next" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "rom_data" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "dig1_next" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg_reg' in module 'pong_top'
+INFO: [Synth 8-5544] ROM "d_clr" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gra_still" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state_next" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "d_clr" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gra_still" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state_next" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+WARNING: [Synth 8-327] inferring latch for variable 'char_addr_r_reg' [C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/sources_1/new/pong_text.v:99]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 newgame |                               00 |                               00
+                    play |                               01 |                               01
+                    over |                               10 |                               11
+                 newball |                               11 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg_reg' using encoding 'sequential' in module 'pong_top'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 774.211 ; gain = 495.156
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     10 Bit       Adders := 6     
+	   2 Input      7 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 2     
+	   3 Input      3 Bit       Adders := 2     
+	   2 Input      2 Bit       Adders := 2     
++---Registers : 
+	               12 Bit    Registers := 1     
+	               11 Bit    Registers := 1     
+	               10 Bit    Registers := 9     
+	                7 Bit    Registers := 1     
+	                4 Bit    Registers := 2     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
++---ROMs : 
+	                              ROMs := 1     
++---Muxes : 
+	   2 Input     12 Bit        Muxes := 4     
+	   3 Input     12 Bit        Muxes := 1     
+	   5 Input     12 Bit        Muxes := 1     
+	   4 Input     12 Bit        Muxes := 1     
+	   2 Input     10 Bit        Muxes := 4     
+	   8 Input      8 Bit        Muxes := 1     
+	  14 Input      7 Bit        Muxes := 1     
+	   2 Input      7 Bit        Muxes := 2     
+	  64 Input      7 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 7     
+	   2 Input      3 Bit        Muxes := 4     
+	   2 Input      2 Bit        Muxes := 2     
+	   4 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 14    
+	   4 Input      1 Bit        Muxes := 6     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module pong_top 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	               12 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     12 Bit        Muxes := 1     
+	   4 Input     12 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 2     
+	   4 Input      2 Bit        Muxes := 2     
+	   4 Input      1 Bit        Muxes := 6     
+	   2 Input      1 Bit        Muxes := 2     
+Module vga_controller 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     10 Bit       Adders := 2     
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	               10 Bit    Registers := 4     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 2     
+Module ascii_rom 
+Detailed RTL Component Info : 
++---Registers : 
+	               11 Bit    Registers := 1     
++---ROMs : 
+	                              ROMs := 1     
+Module pong_text 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     12 Bit        Muxes := 3     
+	   3 Input     12 Bit        Muxes := 1     
+	  14 Input      7 Bit        Muxes := 1     
+	   2 Input      7 Bit        Muxes := 1     
+	  64 Input      7 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 3     
+	   2 Input      3 Bit        Muxes := 3     
+Module pong_graph 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     10 Bit       Adders := 4     
+	   3 Input      3 Bit       Adders := 2     
++---Registers : 
+	               10 Bit    Registers := 5     
++---Muxes : 
+	   5 Input     12 Bit        Muxes := 1     
+	   2 Input     10 Bit        Muxes := 4     
+	   8 Input      8 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 6     
+Module timer 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      7 Bit       Adders := 1     
++---Registers : 
+	                7 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      7 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module m100_counter 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 2     
++---Registers : 
+	                4 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      4 Bit        Muxes := 4     
+	   2 Input      1 Bit        Muxes := 3     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-5544] ROM "vga_unit/w_25MHz" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state_next" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "vga_unit/v_count_next" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-3886] merging instance 'graph_unit/x_delta_reg_reg[3]' (FDCE) to 'graph_unit/x_delta_reg_reg[9]'
+INFO: [Synth 8-3886] merging instance 'graph_unit/x_delta_reg_reg[4]' (FDCE) to 'graph_unit/x_delta_reg_reg[9]'
+INFO: [Synth 8-3886] merging instance 'graph_unit/x_delta_reg_reg[5]' (FDCE) to 'graph_unit/x_delta_reg_reg[9]'
+INFO: [Synth 8-3886] merging instance 'graph_unit/x_delta_reg_reg[6]' (FDCE) to 'graph_unit/x_delta_reg_reg[9]'
+INFO: [Synth 8-3886] merging instance 'graph_unit/x_delta_reg_reg[7]' (FDCE) to 'graph_unit/x_delta_reg_reg[9]'
+INFO: [Synth 8-3886] merging instance 'graph_unit/x_delta_reg_reg[8]' (FDCE) to 'graph_unit/x_delta_reg_reg[9]'
+INFO: [Synth 8-3886] merging instance 'graph_unit/x_delta_reg_reg[9]' (FDCE) to 'graph_unit/x_delta_reg_reg[2]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\graph_unit/x_delta_reg_reg[0] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\graph_unit/x_delta_reg_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\graph_unit/y_delta_reg_reg[0] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\graph_unit/y_delta_reg_reg[1] )
+INFO: [Synth 8-3886] merging instance 'graph_unit/y_delta_reg_reg[2]' (FDCE) to 'graph_unit/y_delta_reg_reg[9]'
+INFO: [Synth 8-3886] merging instance 'graph_unit/y_delta_reg_reg[3]' (FDCE) to 'graph_unit/y_delta_reg_reg[9]'
+INFO: [Synth 8-3886] merging instance 'graph_unit/y_delta_reg_reg[4]' (FDCE) to 'graph_unit/y_delta_reg_reg[9]'
+INFO: [Synth 8-3886] merging instance 'graph_unit/y_delta_reg_reg[5]' (FDCE) to 'graph_unit/y_delta_reg_reg[9]'
+INFO: [Synth 8-3886] merging instance 'graph_unit/y_delta_reg_reg[6]' (FDCE) to 'graph_unit/y_delta_reg_reg[9]'
+INFO: [Synth 8-3886] merging instance 'graph_unit/y_delta_reg_reg[7]' (FDCE) to 'graph_unit/y_delta_reg_reg[9]'
+INFO: [Synth 8-3886] merging instance 'graph_unit/y_delta_reg_reg[8]' (FDCE) to 'graph_unit/y_delta_reg_reg[9]'
+INFO: [Synth 8-3886] merging instance 'rgb_reg_reg[0]' (FDCE) to 'rgb_reg_reg[1]'
+INFO: [Synth 8-3886] merging instance 'rgb_reg_reg[1]' (FDCE) to 'rgb_reg_reg[2]'
+INFO: [Synth 8-3886] merging instance 'rgb_reg_reg[2]' (FDCE) to 'rgb_reg_reg[3]'
+INFO: [Synth 8-3886] merging instance 'rgb_reg_reg[4]' (FDCE) to 'rgb_reg_reg[5]'
+INFO: [Synth 8-3886] merging instance 'rgb_reg_reg[5]' (FDCE) to 'rgb_reg_reg[6]'
+INFO: [Synth 8-3886] merging instance 'rgb_reg_reg[6]' (FDCE) to 'rgb_reg_reg[7]'
+INFO: [Synth 8-3886] merging instance 'rgb_reg_reg[8]' (FDCE) to 'rgb_reg_reg[9]'
+INFO: [Synth 8-3886] merging instance 'rgb_reg_reg[9]' (FDCE) to 'rgb_reg_reg[10]'
+INFO: [Synth 8-3886] merging instance 'rgb_reg_reg[10]' (FDCE) to 'rgb_reg_reg[11]'
+WARNING: [Synth 8-3332] Sequential element (text_unit/char_addr_r_reg[6]) is unused and will be removed from module pong_top.
+WARNING: [Synth 8-3332] Sequential element (text_unit/char_addr_r_reg[5]) is unused and will be removed from module pong_top.
+WARNING: [Synth 8-3332] Sequential element (text_unit/char_addr_r_reg[4]) is unused and will be removed from module pong_top.
+WARNING: [Synth 8-3332] Sequential element (text_unit/char_addr_r_reg[3]) is unused and will be removed from module pong_top.
+WARNING: [Synth 8-3332] Sequential element (text_unit/char_addr_r_reg[2]) is unused and will be removed from module pong_top.
+WARNING: [Synth 8-3332] Sequential element (text_unit/char_addr_r_reg[1]) is unused and will be removed from module pong_top.
+WARNING: [Synth 8-3332] Sequential element (text_unit/char_addr_r_reg[0]) is unused and will be removed from module pong_top.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 774.211 ; gain = 495.156
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+ROM:
++------------+-----------------------------------+---------------+----------------+
+|Module Name | RTL Object                        | Depth x Width | Implemented As | 
++------------+-----------------------------------+---------------+----------------+
+|pong_top    | text_unit/ascii_unit/addr_reg_reg | 2048x8        | Block RAM      | 
+|pong_top    | text_unit/char_addr_r             | 64x7          | LUT            | 
++------------+-----------------------------------+---------------+----------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6837] The timing for the instance i_0/text_unit/ascii_unit/addr_reg_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 774.211 ; gain = 495.156
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 812.352 ; gain = 533.297
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6837] The timing for the instance text_unit/ascii_unit/addr_reg_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 813.375 ; gain = 534.320
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 813.375 ; gain = 534.320
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 813.375 ; gain = 534.320
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 813.375 ; gain = 534.320
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 813.375 ; gain = 534.320
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 813.375 ; gain = 534.320
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 813.375 ; gain = 534.320
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |BUFG     |     1|
+|2     |CARRY4   |    25|
+|3     |LUT1     |     3|
+|4     |LUT2     |    38|
+|5     |LUT3     |    40|
+|6     |LUT4     |    85|
+|7     |LUT5     |    49|
+|8     |LUT6     |   106|
+|9     |MUXF7    |     2|
+|10    |RAMB18E1 |     1|
+|11    |FDCE     |    87|
+|12    |FDPE     |    11|
+|13    |IBUF     |     4|
+|14    |OBUF     |    14|
++------+---------+------+
+
+Report Instance Areas: 
++------+---------------+---------------+------+
+|      |Instance       |Module         |Cells |
++------+---------------+---------------+------+
+|1     |top            |               |   466|
+|2     |  counter_unit |m100_counter   |    17|
+|3     |  graph_unit   |pong_graph     |   215|
+|4     |  text_unit    |pong_text      |     3|
+|5     |    ascii_unit |ascii_rom      |     3|
+|6     |  timer_unit   |timer          |    19|
+|7     |  vga_unit     |vga_controller |   185|
++------+---------------+---------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 813.375 ; gain = 534.320
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 8 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 813.375 ; gain = 196.738
+Synthesis Optimization Complete : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 813.375 ; gain = 534.320
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 28 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 813.375 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+76 Infos, 34 Warnings, 24 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 813.375 ; gain = 546.465
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 813.375 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.runs/synth_1/pong_top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file pong_top_utilization_synth.rpt -pb pong_top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sun Dec  3 15:13:26 2023...

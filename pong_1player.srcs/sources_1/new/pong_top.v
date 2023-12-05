@@ -21,7 +21,8 @@ module pong_top(
     output dp,
     output [3:0] an,
     
-    input RsRx        //uart
+    input wire RsRx,        //uart
+    output wire RsTx
     );
     
     // state declarations for 4 states
@@ -232,7 +233,7 @@ module pong_top(
     quadSevenSeg q7seg(seg,dp,an0,an1,an2,an3,num0,num1,num2,num3,targetClk);
     
     //UART-----------------------------------------------------------------------------------------------
-    uart uart(clk,RsRx,p1up, p1down, p2up, p2down);
+    uart uart(clk,RsRx,p1up, p1down, p2up, p2down,RsTx);
 
     
 endmodule

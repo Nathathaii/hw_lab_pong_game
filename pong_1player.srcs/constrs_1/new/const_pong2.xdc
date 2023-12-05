@@ -6,12 +6,12 @@ set_property PACKAGE_PIN W5 [get_ports clk]
 # ##Buttons
 #set_property PACKAGE_PIN T17 	 [get_ports reset]						
 #set_property IOSTANDARD LVCMOS33 [get_ports reset]
-## btnU
-set_property PACKAGE_PIN T18 	 [get_ports btn[0]]						
-set_property IOSTANDARD LVCMOS33 [get_ports btn[0]]
-## btnD
-set_property PACKAGE_PIN U17 	 [get_ports btn[1]]						
-set_property IOSTANDARD LVCMOS33 [get_ports btn[1]]
+### btnU
+#set_property PACKAGE_PIN T18 	 [get_ports btn[0]]						
+#set_property IOSTANDARD LVCMOS33 [get_ports btn[0]]
+### btnD
+#set_property PACKAGE_PIN U17 	 [get_ports btn[1]]						
+#set_property IOSTANDARD LVCMOS33 [get_ports btn[1]]
 
 ##VGA Connector
 set_property PACKAGE_PIN G19     [get_ports {rgb[11]}]				

@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date         : Tue Dec  5 22:19:15 2023
+| Date         : Tue Dec  5 23:00:51 2023
 | Host         : DESKTOP-PTKK11O running 64-bit major release  (build 9200)
 | Command      : report_drc -file pong_top_drc_routed.rpt -pb pong_top_drc_routed.pb -rpx pong_top_drc_routed.rpx
 | Design       : pong_top
@@ -73,37 +73,37 @@ Related violations: <none>
 
 REQP-1840#2 Warning
 RAMB18 async control check  
-The RAMB18E1 text_unit/ascii_unit/addr_reg_reg has an input control pin text_unit/ascii_unit/addr_reg_reg/ADDRARDADDR[12] (net: text_unit/ascii_unit/ADDRARDADDR[9]) which is driven by a register (vga_unit/h_count_reg_reg[6]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB18E1 text_unit/ascii_unit/addr_reg_reg has an input control pin text_unit/ascii_unit/addr_reg_reg/ADDRARDADDR[12] (net: text_unit/ascii_unit/ADDRARDADDR[9]) which is driven by a register (vga_unit/h_count_reg_reg[5]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1840#3 Warning
 RAMB18 async control check  
-The RAMB18E1 text_unit/ascii_unit/addr_reg_reg has an input control pin text_unit/ascii_unit/addr_reg_reg/ADDRARDADDR[12] (net: text_unit/ascii_unit/ADDRARDADDR[9]) which is driven by a register (vga_unit/h_count_reg_reg[7]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB18E1 text_unit/ascii_unit/addr_reg_reg has an input control pin text_unit/ascii_unit/addr_reg_reg/ADDRARDADDR[12] (net: text_unit/ascii_unit/ADDRARDADDR[9]) which is driven by a register (vga_unit/h_count_reg_reg[6]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1840#4 Warning
 RAMB18 async control check  
-The RAMB18E1 text_unit/ascii_unit/addr_reg_reg has an input control pin text_unit/ascii_unit/addr_reg_reg/ADDRARDADDR[12] (net: text_unit/ascii_unit/ADDRARDADDR[9]) which is driven by a register (vga_unit/h_count_reg_reg[9]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB18E1 text_unit/ascii_unit/addr_reg_reg has an input control pin text_unit/ascii_unit/addr_reg_reg/ADDRARDADDR[12] (net: text_unit/ascii_unit/ADDRARDADDR[9]) which is driven by a register (vga_unit/h_count_reg_reg[7]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1840#5 Warning
 RAMB18 async control check  
-The RAMB18E1 text_unit/ascii_unit/addr_reg_reg has an input control pin text_unit/ascii_unit/addr_reg_reg/ADDRARDADDR[12] (net: text_unit/ascii_unit/ADDRARDADDR[9]) which is driven by a register (vga_unit/v_count_reg_reg[5]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB18E1 text_unit/ascii_unit/addr_reg_reg has an input control pin text_unit/ascii_unit/addr_reg_reg/ADDRARDADDR[12] (net: text_unit/ascii_unit/ADDRARDADDR[9]) which is driven by a register (vga_unit/h_count_reg_reg[8]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1840#6 Warning
 RAMB18 async control check  
-The RAMB18E1 text_unit/ascii_unit/addr_reg_reg has an input control pin text_unit/ascii_unit/addr_reg_reg/ADDRARDADDR[12] (net: text_unit/ascii_unit/ADDRARDADDR[9]) which is driven by a register (vga_unit/v_count_reg_reg[6]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB18E1 text_unit/ascii_unit/addr_reg_reg has an input control pin text_unit/ascii_unit/addr_reg_reg/ADDRARDADDR[12] (net: text_unit/ascii_unit/ADDRARDADDR[9]) which is driven by a register (vga_unit/h_count_reg_reg[9]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1840#7 Warning
 RAMB18 async control check  
-The RAMB18E1 text_unit/ascii_unit/addr_reg_reg has an input control pin text_unit/ascii_unit/addr_reg_reg/ADDRARDADDR[12] (net: text_unit/ascii_unit/ADDRARDADDR[9]) which is driven by a register (vga_unit/v_count_reg_reg[7]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB18E1 text_unit/ascii_unit/addr_reg_reg has an input control pin text_unit/ascii_unit/addr_reg_reg/ADDRARDADDR[12] (net: text_unit/ascii_unit/ADDRARDADDR[9]) which is driven by a register (vga_unit/v_count_reg_reg[5]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1840#8 Warning
 RAMB18 async control check  
-The RAMB18E1 text_unit/ascii_unit/addr_reg_reg has an input control pin text_unit/ascii_unit/addr_reg_reg/ADDRARDADDR[12] (net: text_unit/ascii_unit/ADDRARDADDR[9]) which is driven by a register (vga_unit/v_count_reg_reg[8]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB18E1 text_unit/ascii_unit/addr_reg_reg has an input control pin text_unit/ascii_unit/addr_reg_reg/ADDRARDADDR[12] (net: text_unit/ascii_unit/ADDRARDADDR[9]) which is driven by a register (vga_unit/v_count_reg_reg[7]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1840#9 Warning

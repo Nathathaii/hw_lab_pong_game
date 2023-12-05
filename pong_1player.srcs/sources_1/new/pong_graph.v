@@ -49,7 +49,9 @@ module pong_graph(
     parameter X_PAD2_L = 600;
     parameter X_PAD2_R = 603;    // 4 pixels wide
     // paddle vertical boundary signals
-    wire [9:0] y_pad_t, y_pad_b;
+    wire [9:0] y_pad1_t, y_pad1_b;
+    wire [9:0] y_pad2_t, y_pad2_b;
+    
     parameter PAD_HEIGHT = 72;  // 72 pixels high
     // register to track top boundary and buffer
     reg [9:0] y_pad1_reg = 204;      // Paddle starting position
@@ -122,7 +124,7 @@ module pong_graph(
     
     // OBJECT STATUS SIGNALS
 //    wire l_wall_on, 
-    wire t_wall_on, b_wall_on, pad_on, sq_ball_on, ball_on;
+    wire t_wall_on, b_wall_on, pad1_on, pad2_on, sq_ball_on, ball_on;
     wire [11:0] wall_rgb, pad_rgb, ball_rgb, bg_rgb;
     
     
@@ -140,6 +142,7 @@ module pong_graph(
     
     
     // paddle 
+    
     assign y_pad1_t = y_pad1_reg;                             // paddle top position
     assign y_pad1_b = y_pad1_t + PAD_HEIGHT - 1;              // paddle bottom position
     assign pad1_on = (X_PAD1_L <= x) && (x <= X_PAD1_R) &&     // pixel within paddle boundaries
@@ -233,7 +236,7 @@ module pong_graph(
     
     // output status signal for graphics 
 //    assign graph_on = l_wall_on | t_wall_on | b_wall_on | pad_on | ball_on;
-    assign graph_on = t_wall_on | b_wall_on | pad_on | ball_on;
+    assign graph_on = t_wall_on | b_wall_on | ball_on | pad1_on | pad2_on;
     
     
     // rgb multiplexing circuit
@@ -243,7 +246,7 @@ module pong_graph(
         else
             if(t_wall_on | b_wall_on)
                 graph_rgb = wall_rgb;     // wall color
-            else if(pad_on)
+            else if(pad1_on | pad2_on)
                 graph_rgb = pad_rgb;      // paddle color
             else if(ball_on)
                 graph_rgb = ball_rgb;     // ball color

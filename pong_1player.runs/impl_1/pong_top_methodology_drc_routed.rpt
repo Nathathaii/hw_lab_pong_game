@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date         : Tue Dec  5 22:19:17 2023
+| Date         : Tue Dec  5 23:00:53 2023
 | Host         : DESKTOP-PTKK11O running 64-bit major release  (build 9200)
 | Command      : report_methodology -file pong_top_methodology_drc_routed.rpt -pb pong_top_methodology_drc_routed.pb -rpx pong_top_methodology_drc_routed.rpx
 | Design       : pong_top
@@ -23,12 +23,12 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 79
+             Violations found: 106
 +-----------+----------+-------------------------------+------------+
 | Rule      | Severity | Description                   | Violations |
 +-----------+----------+-------------------------------+------------+
-| TIMING-17 | Warning  | Non-clocked sequential cell   | 64         |
-| TIMING-18 | Warning  | Missing input or output delay | 15         |
+| TIMING-17 | Warning  | Non-clocked sequential cell   | 84         |
+| TIMING-18 | Warning  | Missing input or output delay | 22         |
 +-----------+----------+-------------------------------+------------+
 
 2. REPORT DETAILS
@@ -135,220 +135,320 @@ Related violations: <none>
 
 TIMING-17#21 Warning
 Non-clocked sequential cell  
-The clock pin uart/last_rec_reg/C is not reached by a timing clock
+The clock pin uart/en_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#22 Warning
 Non-clocked sequential cell  
-The clock pin uart/p1down_reg/C is not reached by a timing clock
+The clock pin uart/last_rec_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#23 Warning
 Non-clocked sequential cell  
-The clock pin uart/p1up_reg/C is not reached by a timing clock
+The clock pin uart/p1down_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#24 Warning
 Non-clocked sequential cell  
-The clock pin uart/p2down_reg/C is not reached by a timing clock
+The clock pin uart/p1up_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#25 Warning
 Non-clocked sequential cell  
-The clock pin uart/p2up_reg/C is not reached by a timing clock
+The clock pin uart/p2down_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#26 Warning
 Non-clocked sequential cell  
-The clock pin uart/receiver/count_reg[0]/C is not reached by a timing clock
+The clock pin uart/p2up_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#27 Warning
 Non-clocked sequential cell  
-The clock pin uart/receiver/count_reg[1]/C is not reached by a timing clock
+The clock pin uart/receiver/count_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#28 Warning
 Non-clocked sequential cell  
-The clock pin uart/receiver/count_reg[2]/C is not reached by a timing clock
+The clock pin uart/receiver/count_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#29 Warning
 Non-clocked sequential cell  
-The clock pin uart/receiver/count_reg[3]/C is not reached by a timing clock
+The clock pin uart/receiver/count_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#30 Warning
 Non-clocked sequential cell  
-The clock pin uart/receiver/count_reg[4]/C is not reached by a timing clock
+The clock pin uart/receiver/count_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#31 Warning
 Non-clocked sequential cell  
-The clock pin uart/receiver/count_reg[5]/C is not reached by a timing clock
+The clock pin uart/receiver/count_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#32 Warning
 Non-clocked sequential cell  
-The clock pin uart/receiver/count_reg[6]/C is not reached by a timing clock
+The clock pin uart/receiver/count_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#33 Warning
 Non-clocked sequential cell  
-The clock pin uart/receiver/count_reg[7]/C is not reached by a timing clock
+The clock pin uart/receiver/count_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#34 Warning
 Non-clocked sequential cell  
-The clock pin uart/receiver/data_out_reg[0]/C is not reached by a timing clock
+The clock pin uart/receiver/count_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#35 Warning
 Non-clocked sequential cell  
-The clock pin uart/receiver/data_out_reg[1]/C is not reached by a timing clock
+The clock pin uart/receiver/data_out_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#36 Warning
 Non-clocked sequential cell  
-The clock pin uart/receiver/data_out_reg[2]/C is not reached by a timing clock
+The clock pin uart/receiver/data_out_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#37 Warning
 Non-clocked sequential cell  
-The clock pin uart/receiver/data_out_reg[3]/C is not reached by a timing clock
+The clock pin uart/receiver/data_out_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#38 Warning
 Non-clocked sequential cell  
-The clock pin uart/receiver/data_out_reg[4]/C is not reached by a timing clock
+The clock pin uart/receiver/data_out_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#39 Warning
 Non-clocked sequential cell  
-The clock pin uart/receiver/data_out_reg[5]/C is not reached by a timing clock
+The clock pin uart/receiver/data_out_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#40 Warning
 Non-clocked sequential cell  
-The clock pin uart/receiver/data_out_reg[6]/C is not reached by a timing clock
+The clock pin uart/receiver/data_out_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#41 Warning
 Non-clocked sequential cell  
-The clock pin uart/receiver/data_out_reg[7]/C is not reached by a timing clock
+The clock pin uart/receiver/data_out_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#42 Warning
 Non-clocked sequential cell  
-The clock pin uart/receiver/last_bit_reg/C is not reached by a timing clock
+The clock pin uart/receiver/data_out_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#43 Warning
 Non-clocked sequential cell  
-The clock pin uart/receiver/received_reg/C is not reached by a timing clock
+The clock pin uart/receiver/last_bit_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#44 Warning
 Non-clocked sequential cell  
-The clock pin uart/receiver/receiving_reg/C is not reached by a timing clock
+The clock pin uart/receiver/received_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#45 Warning
 Non-clocked sequential cell  
-The clock pin vga_unit/h_count_next_reg[0]/C is not reached by a timing clock
+The clock pin uart/receiver/receiving_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#46 Warning
 Non-clocked sequential cell  
-The clock pin vga_unit/h_count_next_reg[1]/C is not reached by a timing clock
+The clock pin uart/transmitter/bit_out_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#47 Warning
 Non-clocked sequential cell  
-The clock pin vga_unit/h_count_next_reg[2]/C is not reached by a timing clock
+The clock pin uart/transmitter/count_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#48 Warning
 Non-clocked sequential cell  
-The clock pin vga_unit/h_count_next_reg[3]/C is not reached by a timing clock
+The clock pin uart/transmitter/count_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#49 Warning
 Non-clocked sequential cell  
-The clock pin vga_unit/h_count_next_reg[4]/C is not reached by a timing clock
+The clock pin uart/transmitter/count_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#50 Warning
 Non-clocked sequential cell  
-The clock pin vga_unit/h_count_next_reg[5]/C is not reached by a timing clock
+The clock pin uart/transmitter/count_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#51 Warning
 Non-clocked sequential cell  
-The clock pin vga_unit/h_count_next_reg[6]/C is not reached by a timing clock
+The clock pin uart/transmitter/count_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#52 Warning
 Non-clocked sequential cell  
-The clock pin vga_unit/h_count_next_reg[7]/C is not reached by a timing clock
+The clock pin uart/transmitter/count_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#53 Warning
 Non-clocked sequential cell  
-The clock pin vga_unit/h_count_next_reg[8]/C is not reached by a timing clock
+The clock pin uart/transmitter/count_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#54 Warning
 Non-clocked sequential cell  
-The clock pin vga_unit/h_count_next_reg[9]/C is not reached by a timing clock
+The clock pin uart/transmitter/count_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#55 Warning
 Non-clocked sequential cell  
-The clock pin vga_unit/v_count_next_reg[0]/C is not reached by a timing clock
+The clock pin uart/transmitter/last_ena_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#56 Warning
 Non-clocked sequential cell  
-The clock pin vga_unit/v_count_next_reg[1]/C is not reached by a timing clock
+The clock pin uart/transmitter/sending_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#57 Warning
 Non-clocked sequential cell  
-The clock pin vga_unit/v_count_next_reg[2]/C is not reached by a timing clock
+The clock pin uart/transmitter/temp_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#58 Warning
 Non-clocked sequential cell  
-The clock pin vga_unit/v_count_next_reg[3]/C is not reached by a timing clock
+The clock pin uart/transmitter/temp_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#59 Warning
 Non-clocked sequential cell  
-The clock pin vga_unit/v_count_next_reg[4]/C is not reached by a timing clock
+The clock pin uart/transmitter/temp_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#60 Warning
 Non-clocked sequential cell  
-The clock pin vga_unit/v_count_next_reg[5]/C is not reached by a timing clock
+The clock pin uart/transmitter/temp_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#61 Warning
 Non-clocked sequential cell  
-The clock pin vga_unit/v_count_next_reg[6]/C is not reached by a timing clock
+The clock pin uart/transmitter/temp_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#62 Warning
 Non-clocked sequential cell  
-The clock pin vga_unit/v_count_next_reg[7]/C is not reached by a timing clock
+The clock pin uart/transmitter/temp_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#63 Warning
 Non-clocked sequential cell  
-The clock pin vga_unit/v_count_next_reg[8]/C is not reached by a timing clock
+The clock pin uart/transmitter/temp_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#64 Warning
+Non-clocked sequential cell  
+The clock pin uart/transmitter/temp_reg[7]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#65 Warning
+Non-clocked sequential cell  
+The clock pin vga_unit/h_count_next_reg[0]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#66 Warning
+Non-clocked sequential cell  
+The clock pin vga_unit/h_count_next_reg[1]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#67 Warning
+Non-clocked sequential cell  
+The clock pin vga_unit/h_count_next_reg[2]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#68 Warning
+Non-clocked sequential cell  
+The clock pin vga_unit/h_count_next_reg[3]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#69 Warning
+Non-clocked sequential cell  
+The clock pin vga_unit/h_count_next_reg[4]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#70 Warning
+Non-clocked sequential cell  
+The clock pin vga_unit/h_count_next_reg[5]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#71 Warning
+Non-clocked sequential cell  
+The clock pin vga_unit/h_count_next_reg[6]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#72 Warning
+Non-clocked sequential cell  
+The clock pin vga_unit/h_count_next_reg[7]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#73 Warning
+Non-clocked sequential cell  
+The clock pin vga_unit/h_count_next_reg[8]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#74 Warning
+Non-clocked sequential cell  
+The clock pin vga_unit/h_count_next_reg[9]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#75 Warning
+Non-clocked sequential cell  
+The clock pin vga_unit/v_count_next_reg[0]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#76 Warning
+Non-clocked sequential cell  
+The clock pin vga_unit/v_count_next_reg[1]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#77 Warning
+Non-clocked sequential cell  
+The clock pin vga_unit/v_count_next_reg[2]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#78 Warning
+Non-clocked sequential cell  
+The clock pin vga_unit/v_count_next_reg[3]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#79 Warning
+Non-clocked sequential cell  
+The clock pin vga_unit/v_count_next_reg[4]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#80 Warning
+Non-clocked sequential cell  
+The clock pin vga_unit/v_count_next_reg[5]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#81 Warning
+Non-clocked sequential cell  
+The clock pin vga_unit/v_count_next_reg[6]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#82 Warning
+Non-clocked sequential cell  
+The clock pin vga_unit/v_count_next_reg[7]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#83 Warning
+Non-clocked sequential cell  
+The clock pin vga_unit/v_count_next_reg[8]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#84 Warning
 Non-clocked sequential cell  
 The clock pin vga_unit/v_count_next_reg[9]/C is not reached by a timing clock
 Related violations: <none>
@@ -424,6 +524,41 @@ An output delay is missing on rgb[9] relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#15 Warning
+Missing input or output delay  
+An output delay is missing on seg[0] relative to clock(s) sys_clk_pin
+Related violations: <none>
+
+TIMING-18#16 Warning
+Missing input or output delay  
+An output delay is missing on seg[1] relative to clock(s) sys_clk_pin
+Related violations: <none>
+
+TIMING-18#17 Warning
+Missing input or output delay  
+An output delay is missing on seg[2] relative to clock(s) sys_clk_pin
+Related violations: <none>
+
+TIMING-18#18 Warning
+Missing input or output delay  
+An output delay is missing on seg[3] relative to clock(s) sys_clk_pin
+Related violations: <none>
+
+TIMING-18#19 Warning
+Missing input or output delay  
+An output delay is missing on seg[4] relative to clock(s) sys_clk_pin
+Related violations: <none>
+
+TIMING-18#20 Warning
+Missing input or output delay  
+An output delay is missing on seg[5] relative to clock(s) sys_clk_pin
+Related violations: <none>
+
+TIMING-18#21 Warning
+Missing input or output delay  
+An output delay is missing on seg[6] relative to clock(s) sys_clk_pin
+Related violations: <none>
+
+TIMING-18#22 Warning
 Missing input or output delay  
 An output delay is missing on vsync relative to clock(s) sys_clk_pin
 Related violations: <none>

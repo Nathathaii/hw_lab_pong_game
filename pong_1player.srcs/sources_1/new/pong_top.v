@@ -11,11 +11,17 @@
 
 module pong_top(
     input clk,              // 100MHz
-    input reset,            // btnR
-    input [1:0] btn,        // btnD, btnU
+    input btnR,            // change reset to btnR check constrain
+//    input [1:0] btn,        // btnD, btnU //should remove this
     output hsync,           // to VGA Connector
     output vsync,           // to VGA Connector
-    output [11:0] rgb       // to DAC, to VGA Connector
+    output [11:0] rgb,      // to DAC, to VGA Connector
+    
+    output [6:0] seg, //7 segments display
+    output dp,
+    output [3:0] an,
+    
+    input RsRx        //uart
     );
     
     // state declarations for 4 states
@@ -28,20 +34,26 @@ module pong_top(
     // signal declaration
     reg [1:0] state_reg, state_next;
     wire [9:0] w_x, w_y;
-    wire w_vid_on, w_p_tick, graph_on, hit, miss;
+    wire w_vid_on, w_p_tick, graph_on, p1hit, p1miss, p2hit, p2miss;
     wire [3:0] text_on;
     wire [11:0] graph_rgb, text_rgb;
     reg [11:0] rgb_reg, rgb_next;
-    wire [3:0] dig0, dig1;
-    reg gra_still, d_inc, d_clr, timer_start;
+    wire [3:0] p1dig1,p1dig0,p2dig1,p2dig0;
+    reg gra_still, p1d_inc,p2d_inc, d_clr, timer_start;
     wire timer_tick, timer_up;
     reg [1:0] ball_reg, ball_next;
+    
+    //uart parameter 
+    wire p1up,p1down,p2up,p2down;
+    
+    wire [3:0]btn;
+    assign btn = {p1down,p1up,p2down,p2up};
     
     
     // Module Instantiations
     vga_controller vga_unit(
         .clk_100MHz(clk),
-        .reset(reset),
+        .reset(btnR),
         .video_on(w_vid_on),
         .hsync(hsync),
         .vsync(vsync),
@@ -53,46 +65,59 @@ module pong_top(
         .clk(clk),
         .x(w_x),
         .y(w_y),
-        .dig0(dig0),
-        .dig1(dig1),
+        .p1dig0(p1dig0),
+        .p1dig1(p1dig1),   //////-------******* add dig2 
+        .p2dig0(p2dig0),
+        .p2dig1(p2dig1),
         .ball(ball_reg),
         .text_on(text_on),
-        .text_rgb(text_rgb));
-        
+        .text_rgb(text_rgb)); 
+      
+    
     pong_graph graph_unit(
         .clk(clk),
-        .reset(reset),
+        .reset(btnR),
         .btn(btn),
         .gra_still(gra_still),
         .video_on(w_vid_on),
         .x(w_x),
         .y(w_y),
-        .hit(hit),
-        .miss(miss),
         .graph_on(graph_on),
+        .p1hit(p1hit), 
+        .p1miss(p1miss), 
+        .p2hit(p2hit), 
+        .p2miss(p2miss),
         .graph_rgb(graph_rgb));
     
     // 60 Hz tick when screen is refreshed
     assign timer_tick = (w_x == 0) && (w_y == 0);
     timer timer_unit(
         .clk(clk),
-        .reset(reset),
+        .reset(btnR),
         .timer_tick(timer_tick),
         .timer_start(timer_start),
         .timer_up(timer_up));
     
-    m100_counter counter_unit(
+    m100_counter counter_unit1( //for player1
         .clk(clk),
-        .reset(reset),
-        .d_inc(d_inc),
+        .reset(btnR),
+        .d_inc(p1d_inc),
         .d_clr(d_clr),
-        .dig0(dig0),
-        .dig1(dig1));
+        .dig0(p1dig0),
+        .dig1(p1dig1));
+        
+    m100_counter counter_unit2( //for player2
+        .clk(clk),
+        .reset(btnR),
+        .d_inc(p2d_inc),
+        .d_clr(d_clr),
+        .dig0(p2dig0),
+        .dig1(p2dig1));
        
     
     // FSMD state and registers
-    always @(posedge clk or posedge reset)
-        if(reset) begin
+    always @(posedge clk or posedge btnR)
+        if(btnR) begin
             state_reg <= newgame;
             ball_reg <= 0;
             rgb_reg <= 0;
@@ -109,7 +134,8 @@ module pong_top(
     always @* begin
         gra_still = 1'b1;
         timer_start = 1'b0;
-        d_inc = 1'b0;
+        p1d_inc = 1'b0;
+        p2d_inc = 1'b0;
         d_clr = 1'b0;
         state_next = state_reg;
         ball_next = ball_reg;
@@ -119,7 +145,7 @@ module pong_top(
                 ball_next = 2'b11;          // three balls
                 d_clr = 1'b1;               // clear score
                 
-                if(btn != 2'b00) begin      // button pressed
+                if(btn != 4'b0000) begin      // button pressed
                     state_next = play;
                     ball_next = ball_reg - 1;    
                 end
@@ -128,10 +154,12 @@ module pong_top(
             play: begin
                 gra_still = 1'b0;   // animated screen
                 
-                if(hit)
-                    d_inc = 1'b1;   // increment score
+                if(p1hit)
+                    p1d_inc = 1'b1;   // increment score
+                else if(p2hit)
+                    p2d_inc = 1'b1;
                 
-                else if(miss) begin
+                else if(p1miss || p2miss) begin
                     if(ball_reg == 0)
                         state_next = over;
                     
@@ -144,7 +172,7 @@ module pong_top(
             end
             
             newball: // wait for 2 sec and until button pressed
-            if(timer_up && (btn != 2'b00))
+            if(timer_up && (btn != 4'b0000))
                 state_next = play;
                 
             over:   // wait 2 sec to display game over
@@ -173,5 +201,38 @@ module pong_top(
     
     // output
     assign rgb = rgb_reg;
+    
+    //7 segment display---------------------------------------------------------------------------------------------
+    ////////////////////////////////////////
+    // Assign number
+    wire [3:0] num3,num2,num1,num0; // From left to right
+    
+    assign num0= p1dig0;
+    assign num1= p2dig1;
+    assign num2= p1dig0;
+    assign num3= p1dig1;
+
+    wire an0,an1,an2,an3;
+    assign an={an3,an2,an1,an0};
+    
+    ////////////////////////////////////////
+    // Clock
+    wire targetClk;
+    wire [18:0] tclk;
+    assign tclk[0]=clk;
+    genvar c;
+    generate for(c=0;c<18;c=c+1) begin
+        clockDiv fDiv(tclk[c+1],tclk[c]);
+    end endgenerate
+    
+    clockDiv fdivTarget(targetClk,tclk[18]);
+    
+    ////////////////////////////////////////
+    // Display
+    quadSevenSeg q7seg(seg,dp,an0,an1,an2,an3,num0,num1,num2,num3,targetClk);
+    
+    //UART-----------------------------------------------------------------------------------------------
+    uart uart(clk,RsRx,p1up, p1down, p2up, p2down);
+
     
 endmodule

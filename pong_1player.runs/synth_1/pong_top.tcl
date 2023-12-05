@@ -31,10 +31,16 @@ set_property ip_output_repo {c:/Users/Nathathai/Documents/chula year 3.1/HW syn 
 set_property ip_cache_permissions {read write} [current_project]
 read_verilog -library xil_defaultlib {
   {C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/sources_1/new/ascii_rom.v}
+  {C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/sources_1/new/baudrate_gen.v}
+  {C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/sources_1/new/clockDiv.v}
+  {C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/sources_1/new/hexTo7Segment.v}
   {C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/sources_1/new/m100_counter.v}
   {C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/sources_1/new/pong_graph.v}
   {C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/sources_1/new/pong_text.v}
+  {C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/sources_1/new/quadSevenSeg.v}
   {C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/sources_1/new/timer.v}
+  {C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/sources_1/new/uart.v}
+  {C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/sources_1/new/uart_rx.v}
   {C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/sources_1/new/vga_controller.v}
   {C:/Users/Nathathai/Documents/chula year 3.1/HW syn lab/vivado/pong_1player/pong_1player.srcs/sources_1/new/pong_top.v}
 }

@@ -13,7 +13,7 @@ module m100_counter(
     input clk,
     input reset,
     input d_inc, d_clr,
-    output [3:0] dig0, dig1
+    output dig0, dig1
     );
     
     // signal declaration

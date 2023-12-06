@@ -59,7 +59,7 @@ module pong_graph(
     reg [9:0] y_pad2_reg = 204;      
     reg [9:0] y_pad2_next;
     // paddle moving velocity when a button is pressed
-    parameter PAD_VELOCITY = 3;     // change to speed up or slow down paddle movement
+    parameter PAD_VELOCITY = 10;     // change to speed up or slow down paddle movement
     
     // paddle 2
     parameter X_PAD1_L = 32;
@@ -135,10 +135,10 @@ module pong_graph(
     
     
     // assign object colors
-    assign wall_rgb   = 12'h00F;    // blue walls
-    assign pad_rgb    = 12'h00F;    // blue paddle
+    assign wall_rgb   = 12'h111;    // gray walls
+    assign pad_rgb    = 12'h111;    // gray paddle
     assign ball_rgb   = 12'hF00;    // red ball
-    assign bg_rgb     = 12'h0FF;    // aqua background
+    assign bg_rgb     = 12'hFFF;    // cream background F5ECCF
     
     
     // paddle 
@@ -159,14 +159,14 @@ module pong_graph(
         y_pad2_next = y_pad2_reg;     // no move
         
         if(refresh_tick)
-            if(btn[1] & (y_pad2_b < (B_WALL_T - 1 - PAD_VELOCITY)))
+            if(btn[3] & (y_pad2_b < (B_WALL_T - 1 - PAD_VELOCITY)))
                 y_pad2_next = y_pad2_reg + PAD_VELOCITY;  // move down
-            else if(btn[0] & (y_pad2_t > (T_WALL_B - 1 - PAD_VELOCITY)))
+            else if(btn[2] & (y_pad2_t > (T_WALL_B - 1 - PAD_VELOCITY)))
                 y_pad2_next = y_pad2_reg - PAD_VELOCITY;  // move up
                 
-            if(btn[3] & (y_pad1_b < (B_WALL_T - 1 - PAD_VELOCITY)))
+            if(btn[1] & (y_pad1_b < (B_WALL_T - 1 - PAD_VELOCITY)))
                 y_pad1_next = y_pad1_reg + PAD_VELOCITY;  // move down
-            else if(btn[2] & (y_pad1_t > (T_WALL_B - 1 - PAD_VELOCITY)))
+            else if(btn[0] & (y_pad1_t > (T_WALL_B - 1 - PAD_VELOCITY)))
                 y_pad1_next = y_pad1_reg - PAD_VELOCITY;  // move up
     end
     

@@ -36,7 +36,7 @@ module pong_top(
     reg [1:0] state_reg, state_next;
     wire [9:0] w_x, w_y;
     wire w_vid_on, w_p_tick, graph_on, p1hit, p1miss, p2hit, p2miss;
-    wire [3:0] text_on;
+    wire [1:0] text_on;
     wire [11:0] graph_rgb, text_rgb;
     reg [11:0] rgb_reg, rgb_next;
     wire [3:0] p1dig1,p1dig0,p2dig1,p2dig0;
@@ -152,15 +152,33 @@ module pong_top(
                 end
             end
             
-            play: begin
+//            play: begin
+//                gra_still = 1'b0;   // animated screen
+                
+//                if(p1hit)
+//                    p1d_inc = 1'b1;   // increment score
+//                else if(p2hit)
+//                    p2d_inc = 1'b1;
+                
+//                else if(p1miss || p2miss) begin
+//                    if(ball_reg == 0)
+//                        state_next = over;
+                    
+//                    else
+//                        state_next = newball;
+                    
+//                    timer_start = 1'b1;     // 2 sec timer
+//                    ball_next = ball_reg - 1;
+//                end
+//            end
+              play: begin
                 gra_still = 1'b0;   // animated screen
-                
-                if(p1hit)
-                    p1d_inc = 1'b1;   // increment score
-                else if(p2hit)
-                    p2d_inc = 1'b1;
-                
-                else if(p1miss || p2miss) begin
+                if(p1miss || p2miss) begin
+                    if(p1miss)
+                        p2d_inc = 1'b1;   // increment score
+                    if(p2miss)
+                        p1d_inc = 1'b1;
+                    
                     if(ball_reg == 0)
                         state_next = over;
                     
@@ -169,7 +187,9 @@ module pong_top(
                     
                     timer_start = 1'b1;     // 2 sec timer
                     ball_next = ball_reg - 1;
+                
                 end
+
             end
             
             newball: // wait for 2 sec and until button pressed
@@ -188,17 +208,16 @@ module pong_top(
             rgb_next = 12'h000; // blank
         
         else
-            if(text_on[3] || ((state_reg == newgame) && text_on[1]) || ((state_reg == over) && text_on[0]))
+//        assign text_on = {score_on, logo_on, rule_on, over_on};
+//        assign text_on = {score_on, over_on};
+            if(text_on[1] || ((state_reg == over) && text_on[0]))
                 rgb_next = text_rgb;    // colors in pong_text
             
             else if(graph_on)
                 rgb_next = graph_rgb;   // colors in graph_text
                 
-            else if(text_on[2])
-                rgb_next = text_rgb;    // colors in pong_text
-                
             else
-                rgb_next = 12'h0FF;     // aqua background
+                rgb_next = 12'hFFF;     // white background
     
     // output
     assign rgb = rgb_reg;
@@ -208,7 +227,7 @@ module pong_top(
     // Assign number
     wire [3:0] num3,num2,num1,num0; // From left to right
     
-    assign num0= p1dig0;
+    assign num0= p2dig0;
     assign num1= p2dig1;
     assign num2= p1dig0;
     assign num3= p1dig1;
@@ -233,7 +252,14 @@ module pong_top(
     quadSevenSeg q7seg(seg,dp,an0,an1,an2,an3,num0,num1,num2,num3,targetClk);
     
     //UART-----------------------------------------------------------------------------------------------
-    uart uart(clk,RsRx,p1up, p1down, p2up, p2down,RsTx);
+    uart uart(
+        .clk(clk),
+        .RsRx(RsRx),
+        .p1up(p1up),
+        .p1down(p1down),
+        .p2up(p2up),
+        .p2down(p2down),
+        .RsTx(RsTx));
 
     
 endmodule

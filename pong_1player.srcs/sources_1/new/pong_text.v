@@ -48,7 +48,7 @@ module pong_text(
    assign row_addr_s = y[4:1];
    assign bit_addr_s = x[3:1];
    
-   always @*
+      always @*
     case(x[9:4])
        6'b000000 : char_addr_s = 7'h20;     // ' '
        6'b000001 : char_addr_s = 7'h50;     // 'P'
@@ -64,57 +64,32 @@ module pong_text(
        6'b001011 : char_addr_s = 7'h4F;     // 'O'
        6'b001100 : char_addr_s = 7'h52;     // 'R'
        6'b001101 : char_addr_s = 7'h45;     // 'E'
-       6'b001110 : char_addr_s = 7'h20;     // ' '
-       6'b001111 : char_addr_s = 7'h3A;     // ':'
-       6'b010000 : char_addr_s = 7'h20;     // ' '
-       6'b010001 : char_addr_s = {3'b011, p1dig1};    // tens digit of p1 score
-       6'b010010 : char_addr_s = {3'b011, p1dig0};    // ones digit of p1 score
+       6'b001110 : char_addr_s = 7'h3A;     // ':'
+       6'b001111 : char_addr_s = {3'b011, p1dig1};    // tens digit of p1 score
+       6'b010000 : char_addr_s = {3'b011, p1dig0};    // ones digit of p1 score
+       6'b010001 : char_addr_s = 7'h20;     // ' '
+       6'b010010 : char_addr_s = 7'h20;     // ' '
        6'b010011 : char_addr_s = 7'h20;     // ' '
        6'b010100 : char_addr_s = 7'h20;     // ' '
        6'b010101 : char_addr_s = 7'h20;     // ' '
        6'b010110 : char_addr_s = 7'h20;     // ' '
-       6'b010111 : char_addr_s = 7'h20;     // ' '
-       6'b011000 : char_addr_s = 7'h20;     // ' '
-       6'b011001 : char_addr_s = 7'h20;     // ' '
-       6'b011010 : char_addr_s = 7'h20;     // ' '
-       6'b011011 : char_addr_s = 7'h20;     // ' '
-       6'b011100 : char_addr_s = 7'h20;     // ' '
-       6'b011101 : char_addr_s = 7'h20;     // ' '
+       6'b010111 : char_addr_s = 7'h50;     // 'P'
+       6'b011000 : char_addr_s = 7'h4C;     // 'L'
+       6'b011001 : char_addr_s = 7'h41;     // 'A'
+       6'b011010 : char_addr_s = 7'h59;     // 'Y'
+       6'b011011 : char_addr_s = 7'h45;     // 'E'
+       6'b011100 : char_addr_s = 7'h52;     // 'R'
+       6'b011101 : char_addr_s = 7'h32;     // '2'
        6'b011110 : char_addr_s = 7'h20;     // ' '
-       6'b011111 : char_addr_s = 7'h20;     // ' '
-       
-       6'b100000 : char_addr_s = 7'h20;     // ' '
-       6'b100001 : char_addr_s = 7'h20;     // ' '
-       6'b100010 : char_addr_s = 7'h20;     // ' '
-       6'b100011 : char_addr_s = 7'h20;     // ' '
-       6'b100100 : char_addr_s = 7'h20;     // ' '
-       6'b100101 : char_addr_s = 7'h20;     // ' '
-       6'b100110 : char_addr_s = 7'h20;     // ' '
-       6'b100111 : char_addr_s = 7'h20;     // ' '
-       6'b101000 : char_addr_s = 7'h20;     // ' '
-       6'b101001 : char_addr_s = 7'h20;     // ' '
-       6'b101010 : char_addr_s = 7'h20;     // ' '
-       6'b101011 : char_addr_s = 7'h20;     // ' '
-       6'b101100 : char_addr_s = 7'h20;     // ' '
-       6'b101101 : char_addr_s = 7'h50;     // 'P'
-       6'b101110 : char_addr_s = 7'h4C;     // 'L'
-       6'b101111 : char_addr_s = 7'h41;     // 'A'
-       6'b110000 : char_addr_s = 7'h59;     // 'Y'
-       6'b110001 : char_addr_s = 7'h45;     // 'E'
-       6'b110010 : char_addr_s = 7'h52;     // 'R'
-       6'b110011 : char_addr_s = 7'h32;     // '2'
-       6'b110100 : char_addr_s = 7'h20;     // ' '
-       6'b110101 : char_addr_s = 7'h53;     // 'S'
-       6'b110110 : char_addr_s = 7'h43;     // 'C'
-       6'b110111 : char_addr_s = 7'h4F;     // 'O'
-       6'b111000 : char_addr_s = 7'h52;     // 'R'
-       6'b111001 : char_addr_s = 7'h45;     // 'E'
-       6'b111010 : char_addr_s = 7'h20;     // ' '
-       6'b111011 : char_addr_s = 7'h3A;     // ':'
-       6'b111100 : char_addr_s = 7'h20;     // ' '
-       6'b111101 : char_addr_s = {3'b011, p2dig1};    // tens digit of p2 score
-       6'b111110 : char_addr_s = {3'b011, p2dig0};    // ones digit of p2 score
-       6'b111111 : char_addr_s = 7'h20;     // ' '
+       6'b011111 : char_addr_s = 7'h53;     // 'S'
+       6'b100000 : char_addr_s = 7'h43;     // 'C'
+       6'b100001 : char_addr_s = 7'h4F;     // 'O'
+       6'b100010 : char_addr_s = 7'h52;     // 'R'
+       6'b100011 : char_addr_s = 7'h45;     // 'E'
+       6'b100100 : char_addr_s = 7'h3A;     // ':'
+       6'b100101 : char_addr_s = {3'b011, p2dig1};    // tens digit of p2 score
+       6'b100110 : char_addr_s = {3'b011, p2dig0};    // ones digit of p2 score
+       6'b100111 : char_addr_s = 7'h20;
 
     endcase
     
@@ -242,14 +217,14 @@ module pong_text(
     
     // mux for ascii ROM addresses and rgb
     always @* begin
-        text_rgb = 12'h0FF;     // aqua background
+        text_rgb = 12'hFFF;     // white background
         
         if(score_on) begin
             char_addr = char_addr_s;
             row_addr = row_addr_s;
             bit_addr = bit_addr_s;
             if(ascii_bit)
-                text_rgb = 12'hF00; // red
+                text_rgb = 12'h000; // black
         end
         
 //        else if(rule_on) begin

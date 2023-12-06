@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date             : Tue Dec  5 23:00:53 2023
+| Date             : Wed Dec  6 14:30:30 2023
 | Host             : DESKTOP-PTKK11O running 64-bit major release  (build 9200)
 | Command          : report_power -file pong_top_power_routed.rpt -pb pong_top_power_summary_routed.pb -rpx pong_top_power_routed.rpx
 | Design           : pong_top
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.104        |
+| Total On-Chip Power (W)  | 0.107        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.033        |
+| Dynamic (W)              | 0.035        |
 | Device Static (W)        | 0.072        |
 | Effective TJA (C/W)      | 5.0          |
 | Max Ambient (C)          | 84.5         |
@@ -53,18 +53,18 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.002 |        3 |       --- |             --- |
-| Slice Logic    |     0.002 |      782 |       --- |             --- |
-|   LUT as Logic |     0.001 |      328 |     20800 |            1.58 |
+| Slice Logic    |     0.002 |      792 |       --- |             --- |
+|   LUT as Logic |     0.001 |      333 |     20800 |            1.60 |
 |   CARRY4       |    <0.001 |       52 |      8150 |            0.64 |
-|   Register     |    <0.001 |      217 |     41600 |            0.52 |
-|   F7/F8 Muxes  |    <0.001 |        2 |     32600 |           <0.01 |
+|   Register     |    <0.001 |      222 |     41600 |            0.53 |
+|   F7/F8 Muxes  |    <0.001 |        3 |     32600 |           <0.01 |
 |   Others       |     0.000 |       57 |       --- |             --- |
 |   BUFG         |     0.000 |        1 |        32 |            3.13 |
-| Signals        |     0.002 |      504 |       --- |             --- |
-| Block RAM      |     0.001 |      0.5 |        50 |            1.00 |
-| I/O            |     0.027 |       30 |       106 |           28.30 |
+| Signals        |     0.002 |      511 |       --- |             --- |
+| Block RAM      |    <0.001 |      0.5 |        50 |            1.00 |
+| I/O            |     0.029 |       30 |       106 |           28.30 |
 | Static Power   |     0.072 |          |           |                 |
-| Total          |     0.104 |          |           |                 |
+| Total          |     0.107 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -143,7 +143,7 @@ Table of Contents
 +----------------+-----------+
 | Name           | Power (W) |
 +----------------+-----------+
-| pong_top       |     0.033 |
+| pong_top       |     0.035 |
 |   graph_unit   |     0.001 |
 |   text_unit    |     0.001 |
 |     ascii_unit |     0.001 |

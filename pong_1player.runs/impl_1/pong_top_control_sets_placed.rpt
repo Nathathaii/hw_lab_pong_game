@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date         : Wed Dec  6 14:29:54 2023
+| Date         : Wed Dec  6 16:07:59 2023
 | Host         : DESKTOP-PTKK11O running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file pong_top_control_sets_placed.rpt
 | Design       : pong_top
@@ -23,8 +23,8 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Number of unique control sets                            |    45 |
-| Unused register locations in slices containing registers |   242 |
+| Number of unique control sets                            |    47 |
+| Unused register locations in slices containing registers |   250 |
 +----------------------------------------------------------+-------+
 
 
@@ -36,12 +36,12 @@ Table of Contents
 +--------+--------------+
 |      1 |           27 |
 |      2 |            1 |
-|      4 |            1 |
+|      4 |            4 |
 |      5 |            1 |
-|      6 |            1 |
 |      7 |            2 |
 |      8 |            4 |
-|     10 |            4 |
+|      9 |            2 |
+|     10 |            2 |
 |     12 |            1 |
 |    16+ |            3 |
 +--------+--------------+
@@ -53,11 +53,11 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              40 |           28 |
-| No           | No                    | Yes                    |              38 |           23 |
+| No           | No                    | No                     |              40 |           30 |
+| No           | No                    | Yes                    |              42 |           19 |
 | No           | Yes                   | No                     |              48 |           12 |
 | Yes          | No                    | No                     |              16 |           10 |
-| Yes          | No                    | Yes                    |              79 |           32 |
+| Yes          | No                    | Yes                    |              83 |           29 |
 | Yes          | Yes                   | No                     |               1 |            1 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
@@ -65,54 +65,56 @@ Table of Contents
 4. Detailed Control Set Information
 -----------------------------------
 
-+-----------------------------------+---------------------------------------------+--------------------------------------+------------------+----------------+
-|            Clock Signal           |                Enable Signal                |           Set/Reset Signal           | Slice Load Count | Bel Load Count |
-+-----------------------------------+---------------------------------------------+--------------------------------------+------------------+----------------+
-|  genblk1[4].fDiv/clkDiv_reg_0     |                                             |                                      |                1 |              1 |
-|  genblk1[10].fDiv/clkDiv_reg_0    |                                             |                                      |                1 |              1 |
-|  genblk1[0].fDiv/clkDiv_reg_0     |                                             |                                      |                1 |              1 |
-|  genblk1[2].fDiv/clkDiv_reg_0     |                                             |                                      |                1 |              1 |
-|  genblk1[6].fDiv/clkDiv_reg_0     |                                             |                                      |                1 |              1 |
-|  genblk1[14].fDiv/clkDiv_reg_0    |                                             |                                      |                1 |              1 |
-|  genblk1[7].fDiv/clkDiv_reg_0     |                                             |                                      |                1 |              1 |
-|  genblk1[3].fDiv/clkDiv_reg_0     |                                             |                                      |                1 |              1 |
-|  genblk1[5].fDiv/clkDiv_reg_0     |                                             |                                      |                1 |              1 |
-|  genblk1[12].fDiv/clkDiv_reg_0    |                                             |                                      |                1 |              1 |
-|  baud_BUFG                        | uart/receiver/data_out[6]                   |                                      |                1 |              1 |
-|  genblk1[13].fDiv/clkDiv_reg_0    |                                             |                                      |                1 |              1 |
-|  genblk1[15].fDiv/clkDiv_reg_0    |                                             |                                      |                1 |              1 |
-|  genblk1[8].fDiv/clkDiv_reg_0     |                                             |                                      |                1 |              1 |
-|  genblk1[11].fDiv/clkDiv_reg_0    |                                             |                                      |                1 |              1 |
-|  genblk1[9].fDiv/clkDiv_reg_0     |                                             |                                      |                1 |              1 |
-|  genblk1[16].fDiv/clkDiv_reg_0    |                                             |                                      |                1 |              1 |
-|  genblk1[1].fDiv/clkDiv_reg_0     |                                             |                                      |                1 |              1 |
-|  genblk1[17].fDiv/clkDiv          |                                             |                                      |                1 |              1 |
-|  baud_BUFG                        | uart/receiver/data_out[7]                   |                                      |                1 |              1 |
-|  baud_BUFG                        | uart/receiver/data_out[4]                   |                                      |                1 |              1 |
-|  baud_BUFG                        | uart/receiver/data_out[0]                   |                                      |                1 |              1 |
-|  baud_BUFG                        | uart/receiver/data_out[2]                   |                                      |                1 |              1 |
-|  baud_BUFG                        | uart/transmitter/bit_out_i_2_n_0            | uart/transmitter/bit_out0            |                1 |              1 |
-|  baud_BUFG                        | uart/receiver/data_out[3]                   |                                      |                1 |              1 |
-|  baud_BUFG                        | uart/receiver/data_out[5]                   |                                      |                1 |              1 |
-|  baud_BUFG                        | uart/receiver/data_out[1]                   |                                      |                1 |              1 |
-|  fdivTarget/CLK                   |                                             |                                      |                1 |              2 |
-|  clk_IBUF_BUFG                    | counter_unit1/r_dig1[3]_i_1_n_0             | btnR_IBUF                            |                1 |              4 |
-|  baud_BUFG                        |                                             |                                      |                2 |              5 |
-|  clk_IBUF_BUFG                    | graph_unit/E[0]                             | btnR_IBUF                            |                2 |              6 |
-|  vga_unit/h_count_reg_reg[9]_2[0] |                                             |                                      |                4 |              7 |
-|  clk_IBUF_BUFG                    | vga_unit/E[0]                               | btnR_IBUF                            |                2 |              7 |
-|  baud_BUFG                        |                                             | uart/receiver/count[7]_i_1_n_0       |                2 |              8 |
-|  baud_BUFG                        | uart/transmitter/temp[7]_i_1_n_0            |                                      |                2 |              8 |
-|  baud_BUFG                        |                                             | uart/transmitter/count[7]_i_1__0_n_0 |                2 |              8 |
-|  clk_IBUF_BUFG                    |                                             |                                      |                3 |              8 |
-|  vga_unit/r_25MHz_reg[1]_0[0]     |                                             | btnR_IBUF                            |                6 |             10 |
-|  vga_unit/r_25MHz_reg[1]_0[0]     | vga_unit/v_count_next_0                     | btnR_IBUF                            |                5 |             10 |
-|  clk_IBUF_BUFG                    | graph_unit/y_pad1_reg[9]_i_1_n_0            | btnR_IBUF                            |                4 |             10 |
-|  clk_IBUF_BUFG                    | graph_unit/y_pad2_next                      | btnR_IBUF                            |                4 |             10 |
-|  clk_IBUF_BUFG                    | vga_unit/r_25MHz_reg[1]_0[0]                | btnR_IBUF                            |                6 |             12 |
-|  clk_IBUF_BUFG                    | vga_unit/FSM_sequential_state_reg_reg[1][0] | btnR_IBUF                            |                8 |             20 |
-|  clk_IBUF_BUFG                    |                                             | btnR_IBUF                            |               17 |             28 |
-|  clk_IBUF_BUFG                    |                                             | uart/baudrate_gen/clear              |                8 |             32 |
-+-----------------------------------+---------------------------------------------+--------------------------------------+------------------+----------------+
++--------------------------------+-------------------------------------------------+--------------------------------------+------------------+----------------+
+|          Clock Signal          |                  Enable Signal                  |           Set/Reset Signal           | Slice Load Count | Bel Load Count |
++--------------------------------+-------------------------------------------------+--------------------------------------+------------------+----------------+
+|  genblk1[0].fDiv/clkDiv_reg_0  |                                                 |                                      |                1 |              1 |
+|  genblk1[1].fDiv/clkDiv_reg_0  |                                                 |                                      |                1 |              1 |
+|  genblk1[5].fDiv/clkDiv_reg_0  |                                                 |                                      |                1 |              1 |
+|  genblk1[4].fDiv/clkDiv_reg_0  |                                                 |                                      |                1 |              1 |
+|  genblk1[6].fDiv/clkDiv_reg_0  |                                                 |                                      |                1 |              1 |
+|  baud_BUFG                     | uart/receiver/data_out[5]                       |                                      |                1 |              1 |
+|  genblk1[3].fDiv/clkDiv_reg_0  |                                                 |                                      |                1 |              1 |
+|  genblk1[2].fDiv/clkDiv_reg_0  |                                                 |                                      |                1 |              1 |
+|  genblk1[7].fDiv/clkDiv_reg_0  |                                                 |                                      |                1 |              1 |
+|  genblk1[12].fDiv/clkDiv_reg_0 |                                                 |                                      |                1 |              1 |
+|  genblk1[8].fDiv/clkDiv_reg_0  |                                                 |                                      |                1 |              1 |
+|  genblk1[14].fDiv/clkDiv_reg_0 |                                                 |                                      |                1 |              1 |
+|  genblk1[11].fDiv/clkDiv_reg_0 |                                                 |                                      |                1 |              1 |
+|  genblk1[10].fDiv/clkDiv_reg_0 |                                                 |                                      |                1 |              1 |
+|  genblk1[13].fDiv/clkDiv_reg_0 |                                                 |                                      |                1 |              1 |
+|  genblk1[16].fDiv/clkDiv_reg_0 |                                                 |                                      |                1 |              1 |
+|  genblk1[15].fDiv/clkDiv_reg_0 |                                                 |                                      |                1 |              1 |
+|  genblk1[17].fDiv/clkDiv       |                                                 |                                      |                1 |              1 |
+|  baud_BUFG                     | uart/receiver/data_out[7]                       |                                      |                1 |              1 |
+|  baud_BUFG                     | uart/receiver/data_out[3]                       |                                      |                1 |              1 |
+|  baud_BUFG                     | uart/receiver/data_out[0]                       |                                      |                1 |              1 |
+|  baud_BUFG                     | uart/receiver/data_out[2]                       |                                      |                1 |              1 |
+|  baud_BUFG                     | uart/receiver/data_out[4]                       |                                      |                1 |              1 |
+|  genblk1[9].fDiv/clkDiv_reg_0  |                                                 |                                      |                1 |              1 |
+|  baud_BUFG                     | uart/receiver/data_out[1]                       |                                      |                1 |              1 |
+|  baud_BUFG                     | uart/receiver/data_out[6]                       |                                      |                1 |              1 |
+|  baud_BUFG                     | uart/transmitter/bit_out_i_2_n_0                | uart/transmitter/bit_out0            |                1 |              1 |
+|  fdivTarget/CLK                |                                                 |                                      |                1 |              2 |
+|  clk_IBUF_BUFG                 | graph_unit/FSM_sequential_state_reg_reg[1][0]   | btnR_IBUF                            |                1 |              4 |
+|  clk_IBUF_BUFG                 | graph_unit/FSM_sequential_state_reg_reg[0]_2[0] | btnR_IBUF                            |                2 |              4 |
+|  clk_IBUF_BUFG                 | graph_unit/FSM_sequential_state_reg_reg[0]_3[0] | btnR_IBUF                            |                1 |              4 |
+|  clk_IBUF_BUFG                 | counter_unit2/r_dig1[3]_i_1__0_n_0              | btnR_IBUF                            |                2 |              4 |
+|  baud_BUFG                     |                                                 |                                      |                2 |              5 |
+|  clk_IBUF_BUFG                 | graph_unit/E[0]                                 | btnR_IBUF                            |                4 |              7 |
+|  vga_unit/E[0]                 |                                                 |                                      |                6 |              7 |
+|  clk_IBUF_BUFG                 |                                                 |                                      |                3 |              8 |
+|  baud_BUFG                     |                                                 | uart/receiver/count[7]_i_1_n_0       |                2 |              8 |
+|  baud_BUFG                     |                                                 | uart/transmitter/count[7]_i_1__0_n_0 |                2 |              8 |
+|  baud_BUFG                     | uart/transmitter/temp[7]_i_1_n_0                |                                      |                2 |              8 |
+|  clk_IBUF_BUFG                 | graph_unit/y_pad1_reg[9]_i_1_n_0                | btnR_IBUF                            |                3 |              9 |
+|  clk_IBUF_BUFG                 | graph_unit/y_pad2_reg[9]_i_1_n_0                | btnR_IBUF                            |                3 |              9 |
+|  vga_unit/r_25MHz_reg[1]_0[0]  |                                                 | btnR_IBUF                            |                5 |             10 |
+|  vga_unit/r_25MHz_reg[1]_0[0]  | vga_unit/v_count_next_1                         | btnR_IBUF                            |                3 |             10 |
+|  clk_IBUF_BUFG                 | vga_unit/r_25MHz_reg[1]_0[0]                    | btnR_IBUF                            |                4 |             12 |
+|  clk_IBUF_BUFG                 | vga_unit/v_count_reg_reg[2]_0[0]                | btnR_IBUF                            |                6 |             20 |
+|  clk_IBUF_BUFG                 |                                                 | btnR_IBUF                            |               14 |             32 |
+|  clk_IBUF_BUFG                 |                                                 | uart/baudrate_gen/clear              |                8 |             32 |
++--------------------------------+-------------------------------------------------+--------------------------------------+------------------+----------------+
 
 

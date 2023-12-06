@@ -59,7 +59,7 @@ module pong_graph(
     reg [9:0] y_pad2_reg = 204;      
     reg [9:0] y_pad2_next;
     // paddle moving velocity when a button is pressed
-    parameter PAD_VELOCITY = 10;     // change to speed up or slow down paddle movement
+    parameter PAD_VELOCITY = 20;     // change to speed up or slow down paddle movement
     
     // paddle 2
     parameter X_PAD1_L = 32;
@@ -80,8 +80,8 @@ module pong_graph(
     reg [9:0] x_delta_reg, x_delta_next;
     reg [9:0] y_delta_reg, y_delta_next;
     // positive or negative ball velocity
-    parameter BALL_VELOCITY_POS = 2;    // ball speed positive pixel direction(down, right)
-    parameter BALL_VELOCITY_NEG = -2;   // ball speed negative pixel direction(up, left)
+    parameter BALL_VELOCITY_POS = 1;    // ball speed positive pixel direction(down, right)
+    parameter BALL_VELOCITY_NEG = -1;   // ball speed negative pixel direction(up, left)
     // round ball from square image
     wire [2:0] rom_addr, rom_col;   // 3-bit rom address and rom column
     reg [7:0] rom_data;             // data at current rom address
@@ -154,20 +154,22 @@ module pong_graph(
                     (y_pad2_t <= y) && (y <= y_pad2_b);
                     
     // Paddle Control
+    reg a;
     always @* begin
         y_pad1_next = y_pad1_reg;     // no move
         y_pad2_next = y_pad2_reg;     // no move
         
         if(refresh_tick)
-            if(btn[3] & (y_pad2_b < (B_WALL_T - 1 - PAD_VELOCITY)))
-                y_pad2_next = y_pad2_reg + PAD_VELOCITY;  // move down
-            else if(btn[2] & (y_pad2_t > (T_WALL_B - 1 - PAD_VELOCITY)))
-                y_pad2_next = y_pad2_reg - PAD_VELOCITY;  // move up
+            if(btn[1]) a = 0;
+            if(btn[1] & (y_pad2_b < (B_WALL_T - 1 - PAD_VELOCITY)))
+                y_pad2_next = y_pad2_reg + PAD_VELOCITY;  // move down k
+            if(btn[0] & (y_pad2_t > (T_WALL_B - 1 - PAD_VELOCITY)))
+                y_pad2_next = y_pad2_reg - PAD_VELOCITY;  // move up i
                 
-            if(btn[1] & (y_pad1_b < (B_WALL_T - 1 - PAD_VELOCITY)))
-                y_pad1_next = y_pad1_reg + PAD_VELOCITY;  // move down
-            else if(btn[0] & (y_pad1_t > (T_WALL_B - 1 - PAD_VELOCITY)))
-                y_pad1_next = y_pad1_reg - PAD_VELOCITY;  // move up
+            if(btn[3] & (y_pad1_b < (B_WALL_T - 1 - PAD_VELOCITY)))
+                y_pad1_next = y_pad1_reg + PAD_VELOCITY;  // move down s
+            if(btn[2] & (y_pad1_t > (T_WALL_B - 1 - PAD_VELOCITY)))
+                y_pad1_next = y_pad1_reg - PAD_VELOCITY;  // move up w
     end
     
     
@@ -230,7 +232,7 @@ module pong_graph(
         
         else if(x_ball_r > X_MAX)
             p2miss = 1'b1;
-        else if(x_ball_r < 0)
+        else if(x_ball_r < 8)
             p1miss = 1'b1;
     end                    
     

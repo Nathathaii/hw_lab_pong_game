@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date             : Wed Dec  6 14:30:30 2023
+| Date             : Wed Dec  6 16:08:21 2023
 | Host             : DESKTOP-PTKK11O running 64-bit major release  (build 9200)
 | Command          : report_power -file pong_top_power_routed.rpt -pb pong_top_power_summary_routed.pb -rpx pong_top_power_routed.rpx
 | Design           : pong_top
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.107        |
+| Total On-Chip Power (W)  | 0.111        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.035        |
+| Dynamic (W)              | 0.039        |
 | Device Static (W)        | 0.072        |
 | Effective TJA (C/W)      | 5.0          |
-| Max Ambient (C)          | 84.5         |
-| Junction Temperature (C) | 25.5         |
+| Max Ambient (C)          | 84.4         |
+| Junction Temperature (C) | 25.6         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -53,18 +53,18 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.002 |        3 |       --- |             --- |
-| Slice Logic    |     0.002 |      792 |       --- |             --- |
-|   LUT as Logic |     0.001 |      333 |     20800 |            1.60 |
+| Slice Logic    |     0.002 |      827 |       --- |             --- |
+|   LUT as Logic |     0.002 |      359 |     20800 |            1.73 |
 |   CARRY4       |    <0.001 |       52 |      8150 |            0.64 |
-|   Register     |    <0.001 |      222 |     41600 |            0.53 |
-|   F7/F8 Muxes  |    <0.001 |        3 |     32600 |           <0.01 |
+|   Register     |    <0.001 |      230 |     41600 |            0.55 |
+|   F7/F8 Muxes  |    <0.001 |        2 |     32600 |           <0.01 |
 |   Others       |     0.000 |       57 |       --- |             --- |
 |   BUFG         |     0.000 |        1 |        32 |            3.13 |
-| Signals        |     0.002 |      511 |       --- |             --- |
-| Block RAM      |    <0.001 |      0.5 |        50 |            1.00 |
-| I/O            |     0.029 |       30 |       106 |           28.30 |
+| Signals        |     0.002 |      537 |       --- |             --- |
+| Block RAM      |     0.001 |      0.5 |        50 |            1.00 |
+| I/O            |     0.032 |       30 |       106 |           28.30 |
 | Static Power   |     0.072 |          |           |                 |
-| Total          |     0.107 |          |           |                 |
+| Total          |     0.111 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -74,9 +74,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.016 |       0.006 |      0.010 |
+| Vccint    |       1.000 |     0.017 |       0.007 |      0.010 |
 | Vccaux    |       1.800 |     0.014 |       0.001 |      0.013 |
-| Vcco33    |       3.300 |     0.009 |       0.008 |      0.001 |
+| Vcco33    |       3.300 |     0.010 |       0.009 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -143,8 +143,8 @@ Table of Contents
 +----------------+-----------+
 | Name           | Power (W) |
 +----------------+-----------+
-| pong_top       |     0.035 |
-|   graph_unit   |     0.001 |
+| pong_top       |     0.039 |
+|   graph_unit   |     0.002 |
 |   text_unit    |     0.001 |
 |     ascii_unit |     0.001 |
 |   vga_unit     |     0.001 |

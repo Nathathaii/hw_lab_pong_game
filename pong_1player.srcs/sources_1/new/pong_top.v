@@ -151,42 +151,22 @@ module pong_top(
                     ball_next = ball_reg - 1;    
                 end
             end
-            
-//            play: begin
-//                gra_still = 1'b0;   // animated screen
-                
-//                if(p1hit)
-//                    p1d_inc = 1'b1;   // increment score
-//                else if(p2hit)
-//                    p2d_inc = 1'b1;
-                
-//                else if(p1miss || p2miss) begin
-//                    if(ball_reg == 0)
-//                        state_next = over;
-                    
-//                    else
-//                        state_next = newball;
-                    
-//                    timer_start = 1'b1;     // 2 sec timer
-//                    ball_next = ball_reg - 1;
-//                end
-//            end
+
               play: begin
                 gra_still = 1'b0;   // animated screen
                 if(p1miss || p2miss) begin
-                    if(p1miss)
-                        p2d_inc = 1'b1;   // increment score
-                    if(p2miss)
-                        p1d_inc = 1'b1;
-                    
-                    if(ball_reg == 0)
+                    p2d_inc = p1miss;
+                    p1d_inc = p2miss;
+
+                    if(btnR)
                         state_next = over;
                     
                     else
                         state_next = newball;
                     
                     timer_start = 1'b1;     // 2 sec timer
-                    ball_next = ball_reg - 1;
+//                    ball_next = ball_reg - 1;
+                    ball_next = ball_reg;
                 
                 end
 
@@ -252,6 +232,7 @@ module pong_top(
     quadSevenSeg q7seg(seg,dp,an0,an1,an2,an3,num0,num1,num2,num3,targetClk);
     
     //UART-----------------------------------------------------------------------------------------------
+
     uart uart(
         .clk(clk),
         .RsRx(RsRx),

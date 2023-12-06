@@ -33,38 +33,9 @@ module uart(
     
     reg p1up, p1down, p2up, p2down;
     
-    reg [3:0] p1up_sr, p1down_sr, p2up_sr, p2down_sr;
-    reg [3:0] p1up_debounced, p1down_debounced, p2up_debounced, p2down_debounced;
-    
-    
     baudrate_gen baudrate_gen(clk, baud);
     uart_rx receiver(baud, RsRx, received, data_out);
     uart_tx transmitter(baud, data_out, en, sent, RsTx);
-    
-//    always @(posedge clk) begin
-//        // Shift in button values to shift registers
-//        p1up_sr <= {p1up_sr[2:0], p1up};
-//        p1down_sr <= {p1down_sr[2:0], p1down};
-//        p2up_sr <= {p2up_sr[2:0], p2up};
-//        p2down_sr <= {p2down_sr[2:0], p2down};
-        
-//        // Perform debouncing
-//        p1up_debounced <= (p1up_sr == 4'b0000) ? 0 :
-//                          (p1up_sr == 4'b1111) ? 1 :
-//                          p1up_debounced;
-
-//        p1down_debounced <= (p1down_sr == 4'b0000) ? 0 :
-//                            (p1down_sr == 4'b1111) ? 1 :
-//                            p1down_debounced;
-
-//        p2up_debounced <= (p2up_sr == 4'b0000) ? 0 :
-//                          (p2up_sr == 4'b1111) ? 1 :
-//                          p2up_debounced;
-
-//        p2down_debounced <= (p2down_sr == 4'b0000) ? 0 :
-//                            (p2down_sr == 4'b1111) ? 1 :
-//                            p2down_debounced;
-//    end
     
     always @(posedge clk) begin //baud
         p1up = 0;
